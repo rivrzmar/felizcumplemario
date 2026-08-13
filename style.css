@@ -51,6 +51,7 @@ body {
 /* --- ZONA INFERIOR --- */
 
 .zona-inferior {
+     background-image: url('going_merry_by_b1kkur1p.png')
     grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
     display: flex;
     justify-content: space-between;

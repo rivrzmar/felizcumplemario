@@ -1,0 +1,98 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fondo principal verde con textura */
+    background-image: url('fondo\ verde.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Courier New', Courier, monospace; /* Tipografía estilo máquina de escribir/apunte */
+    color: #000000;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.scrapbook-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Divide el espacio en dos columnas */
+    gap: 30px;
+    position: relative;
+}
+
+/* --- CLASES REUTILIZABLES PARA LAS FORMAS --- */
+
+.forma-cuadrada {
+    background-image: url('papel\ peque\ v.png'); /* Usa un PNG con transparencia */
+    background-size: 100% 100%; /* Estira la imagen para cubrir el div */
+    background-repeat: no-repeat;
+    padding: 40px; /* Ajusta esto según los bordes de tu imagen */
+    margin-bottom: 30px;
+    min-height: 250px;
+    
+    opacity: 0.7/* 100% Sólida */
+
+}
+
+.forma-libreta {
+    background-image: url('papel.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 80px 40px 40px 40px; /* Padding top más grande para librar el broche verde */
+    min-height: 600px;
+}
+
+/* --- ZONA INFERIOR --- */
+
+.zona-inferior {
+    grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
+    display: flex;
+    justify-content: space-between;
+    margin-top: -50px; /* Margen negativo para sobreponer elementos */
+    z-index: 10;
+}
+
+.forma-papel-roto {
+    background-image: url('papel\ peque\ v.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 50px;
+    width: 60%;
+    min-height: 300px;
+}
+
+.forma-curvas-verdes {
+    background-image: url('ruta-a-las-curvas-puntos.png');
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    width: 35%;
+    min-height: 300px;
+}
+
+/* Imágenes internas */
+.imagen-interna {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Responsive básico */
+@media (max-width: 768px) {
+    .scrapbook-container {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna en móviles */
+    }
+    .zona-inferior {
+        flex-direction: column;
+    }
+    .forma-papel-roto, .forma-curvas-verdes {
+        width: 100%;
+    }
+}
